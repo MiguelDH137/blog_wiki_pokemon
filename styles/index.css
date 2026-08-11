@@ -362,6 +362,9 @@ body {
     #hero-description {
         padding: 0px 15px;
     }
+    #hero-title {
+        text-align: center;
+    }
 
     /* Seccion info */
     .info-description-img img{
@@ -369,6 +372,9 @@ body {
     }
 
     /* Seccion de generaciones */
+    #section-generation {
+        padding: 10px;
+    }
     #generation-title {
         text-align: center;
     }
@@ -378,7 +384,7 @@ body {
         
     }
     .generation-info-p{
-        width: 90%;
+        width: 95%;
     }
     #generation-2-img img{
         width: 70%;
@@ -401,4 +407,5 @@ body {
     .pokedex-info-img {
         width: 100%;
     }
+
 }
