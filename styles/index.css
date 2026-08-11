@@ -195,6 +195,7 @@ body {
 
 .generation-info-p {
     width: 60%;
+    text-align: justify;
 }
 
 .generation-info-img {
@@ -349,4 +350,55 @@ body {
 
 .darkBody .nav-btn:hover img {
     filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.9));
+}
+
+/* ========== Media query y breakpoints ========== */
+@media(min-width: 400px) and (max-width: 500px){
+    body {
+        margin: 0% 5%;
+    }
+
+    /* Seccion Hero */
+    #hero-description {
+        padding: 0px 15px;
+    }
+
+    /* Seccion info */
+    .info-description-img img{
+        width: 90%;
+    }
+
+    /* Seccion de generaciones */
+    #generation-title {
+        text-align: center;
+    }
+    .generation-info{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .generation-info-p{
+        width: 90%;
+    }
+    #generation-2-img img{
+        width: 70%;
+    }
+    #generation-3-img img{
+        width: 70%;
+    }
+    #generation-4-img img{
+        width: 70%;
+    }
+
+    /* Seccion pokedex */
+    .pokedex-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pokedex-info-p {
+        width: 100%;
+    }
+    .pokedex-info-img {
+        width: 100%;
+    }
 }
