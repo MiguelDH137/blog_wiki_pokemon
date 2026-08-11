@@ -1,72 +1,68 @@
-/* --- RESET BÁSICO Y VARIABLES --- */
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #C2C2C2; /* Blanco opaco / Gris claro suave */
-    color: #000000;            /* Texto oscuro principal */
+    color: #000000;
+    background-image: url(../assets/poke_background.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     min-height: 100vh;
+    margin: 0 100px;
+    padding: 0;
 }
 
-/* estilo modo oscuro */
+/* ========== Modo oscuro ========== */
 .darkBody {
-    background-color: #000000;
     color: #FFFFFF;
 }
 
-.darkNav {
-    background-color: #0072a7;
-}
-
-.layout-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    width: 100%;
-    flex: 1;
-}
-
-/* --- 1. HEADER / BARRA SUPERIOR --- */
-/* --- CONTENEDOR HEADER --- */
+/* ========== Seccion Barra de navegacion ========== */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
-    background-color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid #1e293b;
-    height: 65px;
+    height: 57px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-/* --- LOGO POKÉBOLA --- */
+.darkBody .header {
+    background: rgba(10, 15, 25, 0.5);
+}
+
 .logo-container {
     display: flex;
     align-items: center;
 }
 
-.logo-img {
-    height: 40px;                   /* Controla el tamaño de la Pokébola */
+.logo-container img {
+    height: 40px;
     width: auto;
     object-fit: contain;
     transition: transform 0.2s ease;
 }
 
-.logo-img:hover {
-    transform: rotate(15deg) scale(1.08); /* Animación divertida para la pokébola */
+.logo-container img:hover {
+    transform: rotate(15deg) scale(1.08);
 }
 
-/* --- CONTENEDOR DE ÍCONOS --- */
 .nav-buttons {
     display: flex;
     align-items: center;
-    gap: 15px;                      /* Espacio entre casa, lupa y sol */
+    gap: 15px;
 }
 
-/* Reset del botón HTML */
 .btn-icon {
     background: transparent;
     border: none;
@@ -79,56 +75,80 @@ body {
     transition: background-color 0.2s ease;
 }
 
-/* --- SOLUCIÓN DE VISIBILIDAD DE ÍCONOS --- */
 .btn-icon img {
     height: 22px;
     width: 22px;
-    object-fit: contain;    
+    object-fit: contain;
     transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-/* --- EFECTOS HOVER --- */
 .btn-icon:hover {
     background-color: #1e293b;
 }
 
 .btn-icon:hover img {
     transform: scale(1.15);
-    /* Al hacer hover resplandecen en azul/celeste */
-    filter: invert(1) drop-shadow(0 0 6px rgba(56, 189, 248, 0.8)); 
+    filter: invert(1) drop-shadow(0 0 6px rgba(56, 189, 248, 0.8));
 }
 
-/* --- 2. SECCIÓN HERO / DESTACADO --- */
+.layout-container {
+    width: 100%;
+    flex: 1;
+}
+
+/* ========== Seccion hero ========== */
 .hero-section {
-    margin-bottom: 30px;
-}
-
-.hero-title {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.719);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    margin: 100px 0px;
+    border-radius: 16px;
+    padding: 20px;
 }
 
 .hero-card {
-    background-color: #FFFFFF;
-    border: 2px solid #1e293b;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
-    border-radius: 16px;
-    height: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
+}
+
+.hero-card img {
+    width: 100%;
+    max-width: 420px;
+    object-fit: contain;
 }
 
 .hero-description p {
     font-size: 0.95rem;
     line-height: 1.5;
+    text-align: justify;
+    margin-top: 10px;
 }
 
-/* --- 3. SECCIÓN CATALOGO Y FILTROS --- */
+/* ========== Seccion catalogo y filtros ========== */
 .main-catalog {
-    border-top: 1px solid #1e293b;
-    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.719);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 100px 0px;
+}
+
+.main-catalog:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.719);
+}
+
+.darkBody .hero-section,
+.darkBody .main-catalog,
+.darkBody .footer {
+    background: rgba(15, 23, 42, 0.85);
 }
 
 .filtros-bar {
@@ -140,6 +160,10 @@ body {
 
 .filtro-label {
     font-weight: 600;
+}
+
+.darkBody .filtro-label {
+    color: #F1F5F9;
 }
 
 #selectTipo {
@@ -158,6 +182,12 @@ body {
     outline: none;
 }
 
+.darkBody #selectTipo {
+    background-color: #1E293B;
+    color: #F1F5F9;
+    border-color: #475569;
+}
+
 .search-box {
     display: flex;
     align-items: center;
@@ -165,7 +195,7 @@ body {
     border: 1px solid #0F172A;
     border-radius: 20px;
     padding: 6px 14px;
-    flex: 1; /* Ocupa el espacio restante */
+    flex: 1;
 }
 
 .search-box input {
@@ -176,50 +206,48 @@ body {
     width: 100%;
 }
 
+.darkBody .search-box {
+    background-color: #1E293B;
+    border-color: #475569;
+}
+
+.darkBody .search-box input {
+    color: #F1F5F9;
+}
+
 .search-icon {
     font-size: 0.9rem;
     opacity: 0.7;
 }
 
-/* --- 4. REJILLA DE TARJETAS (GRID DE 3 COLUMNAS) --- */
+/* ========== Rejilla de tarjetas ========== */
 .poke-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas exactas como el wireframe */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    margin-bottom: 30px;
-}
-
-/* Responsive para pantallas pequeñas */
-@media (max-width: 768px) {
-    .poke-grid {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    }
-}
-
-#pokeTargets {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    padding: 20px 0;
 }
 
 .pokeTarjeta {
-    background-color: #FFFFFF; /* Tarjeta blanca limpia */
-    border: 1px solid #E2E8F0;;     /* Borde exterior fino */
-    border-radius: 16px;      /* Bordes redondeados */
-    padding: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 02px 0.8px #0000000D; /* Sombra sutil */
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 16px;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .pokeTarjeta:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px #0000001A;
-    border-color: #93C5FD;     /* Borde azul al pasar el cursor */
+    box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.4);
+    border-color: #93C5FD;
+}
+
+.darkBody .pokeTarjeta {
+    background-color: #1E293B;
+    border-color: #334155;
 }
 
 .pokeTarjeta img {
@@ -229,15 +257,7 @@ body {
     margin-bottom: 10px;
 }
 
-.pokeTarjeta h3 {
-    font-size: 0.95rem;
-    color: #f1f5f9;
-    text-transform: capitalize;
-    margin-bottom: 8px;
-}
-
-/* Insignias de Tipos (Type Line) */
-.typeLine {
+.typesLine {
     display: flex;
     gap: 0.375rem;
     justify-content: center;
@@ -256,10 +276,10 @@ body {
     border: 0.063rem solid #D1D5DB;
 }
 
-.pokeImgContainer img {
-    max-height: 110px;
-    max-width: 110px;
-    object-fit: contain;
+.darkBody .pokeTipo {
+    background-color: #1E293B;
+    color: #CBD5E1;
+    border-color: #334155;
 }
 
 .pokeInfo {
@@ -274,37 +294,69 @@ body {
     text-transform: capitalize;
 }
 
-/* --- 5. PAGINACIÓN --- */
+.darkBody .pokeInfo h3 {
+    color: #F1F5F9;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .poke-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+/* ========== Paginacion ========== */
 .paginacion {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .paginacion button {
-    background-color: #FFFFFF;
-    color: #0F172A;
-    padding: 8px 16px;
-    border-radius: 8px;
+    background-color: rgb(0, 99, 180);
+    color: white;
+    border: none;
+    padding: 5px 16px;
+    border-radius: 16px;
     cursor: pointer;
     font-weight: 600;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.paginacion button:hover:not(:disabled) {
+    transform: scale(1.05);
+    filter: invert(1) drop-shadow(0 0 6px rgba(0, 0, 0, 0.8));
 }
 
 .paginacion button:disabled {
     opacity: 0.4;
     cursor: not-allowed;
-    border-color: #475569;
-    color: #475569;
 }
 
-/* --- 6. FOOTER --- */
+/* ========== Footer ========== */
 .footer {
-    background-color: #FFFFFF;
-    border-top: 1px solid #1e293b;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.85rem;
-    color: #0F172A;
-    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.719);
+    width: 100%;
+    border-radius: 16px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer:hover {
+    transform: translateY(-4px);
+    box-shadow: 5px 5px 30px -5px rgb(0, 0, 0);
+}
+
+.footer:hover a {
+    color: rgb(0, 77, 139);
+}
+
+.darkBody .footer p {
+    color: #F1F5F9;
 }
