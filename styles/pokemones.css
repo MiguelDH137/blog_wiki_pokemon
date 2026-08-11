@@ -392,7 +392,7 @@ body {
     filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.9));
 }
 
-@media(min-width: 400px) and (max-width: 500px){
+@media(min-width: 350px) and (max-width: 500px){
     body {
         margin: 0% 5%;
     }
