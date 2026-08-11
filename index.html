@@ -1,13 +1,234 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog-Wiki Minecraft</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Poke Archives</title>
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
-    <h1>Poke Archives</h1>
-    <a href="./pages/pokemones.html" target="_blank">Compendio De pokemones</a>
-    <script src="./js/script.js"></script>
+    
+    <!-- ========== Seccion Barra de navegacion ========== -->
+    <div id="section-navbar">
+        
+        <a href="#" class="nav-logo">
+            <img src="./assets/pokeball.png" alt="logo pokemon">
+        </a>
+        
+        <div class="nav-buttons">
+            <button class="nav-btn" title="Inicio">
+                <a href="./index.html">
+                    <img src="./assets/home.png" alt="Inicio">
+                </a>
+            </button>
+
+            <button class="nav-btn" title="Buscar Pokemon">
+                <a href="#section-pokedex">
+                <img src="./assets/buscar.png" alt="Buscar">
+                </a>
+            </button>
+
+            <button class="nav-btn" id="btnDarkMode" title="claro/oscuro">
+                <img src="./assets/modo_claro.png" alt="Tema">
+            </button>
+        </div>
+    </div>
+        
+        <!-- ========== Seccion hero ========== -->
+    <div id="section-hero">
+        
+        <div id="hero-title">
+            <h1>POKEMON ARCHIVES</h1>
+        </div>
+            
+        <div id="hero-description">
+            <p>Blog de pokemon en estado beta, sobre info general y una mini pokedex.</p>
+        </div>
+
+        <div id="hero-button">
+            <a href="#section-info">
+                <p>Descubre Mas Sobre Pokemon</p>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- ========== Seccion informativa ========== -->
+    <div id="section-info">
+
+        <div id="info-title">
+            <h2>QUE ES POKEMON</h2>
+        </div>
+
+        
+        <div class="info-description">
+            <div class="info-p">
+                <p>Pokémon es una franquicia de medios creada en 1996 por Satoshi Tajiri, centrada en criaturas ficticias llamadas "Pokemon". Los jugadores asumen el rol de entrenadores que capturan, entrenan y combaten con estas especies inspiradas en animales y mitología.</p>
+            </div>
+
+            <div class="info-p">
+                <p>Actualmente existen más de 1000 especies únicas distribuidas en diez generaciones. El objetivo principal es completar la Pokédex, derrotar líderes de gimnasio y convertirse en campeón de la liga, una fórmula exitosa en videojuegos, anime y cartas coleccionables.</p>
+            </div>
+
+        </div>
+        
+        <div class="info-description-img">
+            <img src="./assets/pokemon_historia.jpg" alt="foto cronologica de pokemon">
+        </div>
+
+    </div>
+
+    <!-- ========== Seccion de generaciones ========== -->
+    <div id="section-generation">
+
+        <div id="generation-title">
+            <h2>GENERACIONES EN POKEMON</h2>
+        </div>
+
+        <div id="generation-description">
+            <p>Las generaciones de videojuegos de Pokémon se dividen en nueve etapas principales que introducen nuevas regiones, mecánicas y criaturas.</p>
+        </div>
+
+        <div class="generation-info" id="generation-1">
+            <div class="generation-info-p">
+                <h3>Primera generación (Kanto):</h3>
+                <p>Iniciada con Pokémon Rojo, Verde, Azul y Amarillo en Game Boy, con 151 Pokémon.</p>
+            </div>
+            <div class="generation-info-img">
+                <img src="./assets/pokemon_rojo.webp" alt="pokemon rojo">
+                <img src="./assets/pokemon_azul.webp" alt="pokemon Azul">
+            </div>
+        </div>
+
+        <div class="generation-info" id="generation-2">
+            <div class="generation-info-p">
+                <h3>Segunda generación (Johto):</h3>
+                <p>Formada por Pokémon Oro, Plata y Cristal en Game Boy Color, añadiendo 100 Pokémon y el ciclo día/noche.</p>
+            </div>
+            <div class="generation-info-img">
+                <img src="./assets/pokemon_oro.webp" alt="pokemon oro">
+                <img src="./assets/pokemon_plata.webp" alt="pokemon Plata">
+                <img src="./assets/pokemon-cristal.webp" alt="pokemon Cristal">
+            </div>
+        </div>
+            
+        <div class="generation-info" id="generation-3">
+            <div class="generation-info-p">
+                <h3>Tercera generación (Hoenn):</h3>
+                <p>Compuesta por Pokémon Rubí, Zafiro y Esmeralda en Game Boy Advance, junto a los remakes Rojo Fuego y Verde Hoja.</p>
+            </div>
+            <div class="generation-info-img">
+                <img src="./assets/pokemon_rubi.webp" alt="pokemon ruby">
+                <img src="./assets/pokemon_zafiro.webp" alt="pokemon Zafiro">
+                <img src="./assets/pokemon_esmeralda.webp" alt="pokemon esmeralda">
+            </div>
+        </div>
+            
+        <div class="generation-info" id="generation-4">
+            <div class="generation-info-p">
+                <h3>Cuarta generación (Sinnoh):</h3>
+                <p>Integrada por Pokémon Diamante, Perla y Platino en Nintendo DS, introduciendo la separación de ataques físicos/especiales.</p>
+            </div>
+            <div class="generation-info-img">
+                <img src="./assets/pokemon_diamante.webp" alt="pokemon diamante">
+                <img src="./assets/pokemon_perla.webp" alt="pokemon perla">
+                <img src="./assets/pokemon_platino.webp" alt="pokemon Platino">
+            </div>
+        </div>
+            
+        <div class="generation-info" id="generation-5">
+            <div class="generation-info-p">
+                <h3>Quinta generación (Teselia):</h3>
+                <p>Conformada por Pokémon Edición Negra y Edición Blanca (y sus secuelas directas) en Nintendo DS.</p>
+            </div>
+            <div class="generation-info-img">
+                <img src="./assets/pokemon_negro.webp" alt="pokemon edicion negra">
+                <img src="./assets/pokemon_blanco.webp" alt="pokemon edicion blanca">
+            </div>
+        </div>
+            
+        <div class="generation-info" id="generation-"6>
+            <div class="generation-info-p">
+                <h3>Sexta generación (Kalos):</h3>
+                <p>Presentada en Nintendo 3DS con Pokémon X y Pokémon Y, además de la llegada de las megaevoluciones.</p>
+            </div>
+            <div class="generation-info-img">
+                <img src="./assets/pokemon_x.webp" alt="Pokemon X">
+                <img src="./assets/pokemon_y.webp" alt="Pokemon Y">
+            </div>
+        </div>
+            
+        <div class="generation-info" id="generation-7">
+            <div class="generation-info-p">
+                <h3>Séptima generación (Alola):</h3>
+                <p>Formada por Pokémon Sol y Luna en Nintendo 3DS, que suplantaron los gimnasios tradicionales por las pruebas insulares.</p>
+            </div>
+            <div class="generation-info-img">
+                <img src="./assets/pokemon_sol.webp" alt="Pokemon Sol">
+                <img src="./assets/pokemon_luna.webp" alt="pokemon luna">
+            </div>
+        </div>
+            
+        <div class="generation-info" id="generation-8">
+            <div class="generation-info-p">
+                <h3>Octava generación (Galar):</h3>
+                <p>Abierta en Nintendo Switch con Pokémon Espada y Escudo, enfocándose en combates a gran escala con Dinamax.</p>
+            </div>
+            <div class="generation-info-img">
+                <img src="./assets/pokemon_espada.webp" alt="pokemon Espada">
+                <img src="./assets/pokemon_escudo.webp" alt="Pokemon Escudo">
+            </div>
+        </div>
+            
+        <div class="generation-info" id="generation-"9>
+            <div class="generation-info-p">
+                <h3>Novena generación (Paldea):</h3>
+                <p>Estrenada en Nintendo Switch con Pokémon Escarlata y Púrpura, apostando por primera vez por un mundo completamente abierto.</p>
+            </div>
+            <div class="generation-info-img">
+                <img src="./assets/pokemon_escarlata.webp" alt="pokemon escarlata">
+                <img src="./assets/pokemon_purpura.webp" alt="Pokemon Purpura">
+                </div>
+            </div>
+
+        </div>
+
+    <!-- ========== Seccion pokedex ========== -->
+    <div id="section-pokedex">
+
+        <div id="pokedex-title">
+            <h2>POKEDEX</h2>
+        </div>
+
+        <div class="pokedex-info">
+            <div class="pokedex-info-p">
+                <p>Es una enciclopedia electrónica portátil de alta tecnología utilizada en el mundo ficticio de Pokémon, que los entrenadores llevan consigo para registrar automáticamente las fichas de las diversas especies Pokémon que encuentran durante su viaje.  Originalmente diseñada para los primeros 151 Pokémon, su base de datos se ha actualizado a lo largo de las generaciones para incluir hasta 1.025 especies actuales</p>
+            </div>
+            <div class="pokedex-info-img">
+                <img src="./assets/pokedex_img.jpeg" alt="pokedex imagen">
+            </div>
+        </div>
+
+        <div class="pokedex-button">
+            <a href="./pages/pokemones.html" target="_blank">
+                <p>Descubre Mas Pokemones</p>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- ========== Seccion footer ========== -->
+    <div id="section-footer">
+
+        <div id="footer-info">
+            <a href="">
+                <h2>Desarrollado por MiguelDH137</h2>
+            </a>
+        </div>
+
+    </div>
+
+
+<script src="./js/script.js"></script>
 </body>
 </html>

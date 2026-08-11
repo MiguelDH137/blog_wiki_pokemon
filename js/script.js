@@ -14,11 +14,9 @@ const inputBusqueda = document.getElementById('inputBusqueda');
 const btnSiguiente = document.getElementById('btnSiguiente');
 const btnAnterior = document.getElementById('btnAnterior');
 const btnDarkMode = document.getElementById('btnDarkMode');
-const navBar = document.getElementById('navBar');
 
 btnDarkMode.addEventListener('click', () => {
     document.body.classList.toggle('darkBody');
-    navBar.style.toggle('background: #0072a7')
 })
 
 // ======= Evento de paginacion =======//
