@@ -38,7 +38,8 @@ body {
 }
 
 .darkBody .header {
-    background: rgba(10, 15, 25, 0.5);
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #334155;
 }
 
 .logo-container {
@@ -73,6 +74,10 @@ body {
     justify-content: center;
     border-radius: 8px;
     transition: background-color 0.2s ease;
+}
+
+.darkBody .btn-icon {
+    filter: invert(1)
 }
 
 .btn-icon img {
@@ -148,7 +153,7 @@ body {
 .darkBody .hero-section,
 .darkBody .main-catalog,
 .darkBody .footer {
-    background: rgba(15, 23, 42, 0.85);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .filtros-bar {
@@ -246,7 +251,7 @@ body {
 }
 
 .darkBody .pokeTarjeta {
-    background-color: #1E293B;
+    background-color: rgba(0, 0, 0, 0.65);
     border-color: #334155;
 }
 
@@ -357,6 +362,32 @@ body {
     color: rgb(0, 77, 139);
 }
 
-.darkBody .footer p {
+.darkBody .footer a {
     color: #F1F5F9;
+}
+
+/* ========== Hover en modo oscuro ========== */
+.darkBody .main-catalog:hover {
+    box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.9);
+}
+
+.darkBody .pokeTarjeta:hover {
+    box-shadow: 0px 10px 30px -5px rgba(56, 189, 248, 0.35);
+    border-color: #22d3ee;
+}
+
+.darkBody .footer:hover {
+    box-shadow: 0px 5px 30px -5px rgba(56, 189, 248, 0.5);
+}
+
+.darkBody .paginacion button:hover:not(:disabled) {
+    filter: invert(1) drop-shadow(0 0 8px rgba(56, 189, 248, 0.9));
+}
+
+.darkBody .btn-icon:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.darkBody .btn-icon:hover img {
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.9));
 }

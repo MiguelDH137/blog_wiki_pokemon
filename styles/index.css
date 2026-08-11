@@ -286,3 +286,67 @@ body {
     transform: translateY(-4px);
     box-shadow: 5px 5px 30px -5px rgb(0, 0, 0);
 }
+
+/* ========== Modo oscuro ========== */
+.darkBody {
+    color: #FFFFFF;
+}
+
+.darkBody #section-navbar {
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #334155;
+}
+
+.darkBody .nav-btn {
+    filter: invert(1);
+}
+
+.darkBody #section-hero,
+.darkBody #section-info,
+.darkBody #section-generation,
+.darkBody #section-pokedex,
+.darkBody #section-footer {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.darkBody #info-title h2,
+.darkBody #generation-title h2,
+.darkBody #pokedex-title h2 {
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.darkBody .generation-info {
+    border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.darkBody .generation-info:hover {
+    background-color: rgba(56, 189, 248, 0.2);
+    border-color: #22d3ee;
+    box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.9);
+}
+
+.darkBody #hero-button:hover,
+.darkBody .pokedex-button:hover {
+    filter: invert(1) drop-shadow(0 0 8px rgba(56, 189, 248, 0.9));
+}
+
+.darkBody #section-info:hover,
+.darkBody #section-pokedex:hover {
+    box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.9);
+}
+
+.darkBody #section-footer:hover {
+    box-shadow: 0px 5px 30px -5px rgba(56, 189, 248, 0.5);
+}
+
+.darkBody #footer-info a {
+    color: #FFFFFF;
+}
+
+.darkBody .nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.darkBody .nav-btn:hover img {
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.9));
+}
