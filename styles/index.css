@@ -5,7 +5,7 @@
 
 body {
     color: #000000;
-    background-image: url(../assets/poke_background.png);
+    background-image: url(../assets/poke_background.webp);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -358,6 +358,8 @@ body {
 @media(min-width: 350px) and (max-width: 500px){
     body {
         margin: 0% 5%;
+        background-attachment: scroll;
+        background-position: center top;
     }
 
     /* ========== Seccion hero ========== */

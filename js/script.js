@@ -15,24 +15,31 @@ const btnSiguiente = document.getElementById('btnSiguiente');
 const btnAnterior = document.getElementById('btnAnterior');
 const btnDarkMode = document.getElementById('btnDarkMode');
 
-btnDarkMode.addEventListener('click', () => {
-    document.body.classList.toggle('darkBody');
-})
+if (btnDarkMode) {
+    btnDarkMode.addEventListener('click', () => {
+        document.body.classList.toggle('darkBody');
+    });
+}
 
 // ======= Evento de paginacion =======//
-btnSiguiente.addEventListener('click', () => {
-    const totalPaginas = pokemonesFiltrados.length / paginaLimite;
-    if (pagina < totalPaginas) {
-        pagina += 1;
-        imprimirPokedex(); // Solo renderizamos la pagina, no llamamos a init()
-    }
-});
-btnAnterior.addEventListener('click', () => {
-    if (pagina > 1) {
-        pagina -= 1;
-        imprimirPokedex();
-    }
-});
+if (btnSiguiente) {
+    btnSiguiente.addEventListener('click', () => {
+        const totalPaginas = pokemonesFiltrados.length / paginaLimite;
+        if (pagina < totalPaginas) {
+            pagina += 1;
+            imprimirPokedex(); // Solo renderizamos la pagina, no llamamos a init()
+        }
+    });
+}
+
+if (btnAnterior) {
+    btnAnterior.addEventListener('click', () => {
+        if (pagina > 1) {
+            pagina -= 1;
+            imprimirPokedex();
+        }
+    });
+}
 
 // ======= Funncion para extraer la lista de pokemones de la API ======= //
 const listaPokemones = async(limitePokemon) => {
@@ -118,11 +125,18 @@ const aplicarFiltros = () => {
 }
 
 // ======= Eventos de Filtro y Búsqueda ======= //
-selectTipo.addEventListener('change', aplicarFiltros);
-inputBusqueda.addEventListener('input', aplicarFiltros);
+if (selectTipo) {
+    selectTipo.addEventListener('change', aplicarFiltros);
+}
+
+if (inputBusqueda) {
+    inputBusqueda.addEventListener('input', aplicarFiltros);
+}
 
 // ======= Funcion para extraer tipos del endpoint ======= //
 const extraerTipos = async () => {
+    if (!selectTipo) return;
+
     const respuesta = await fetch(`https://pokeapi.co/api/v2/type`);
 
     if (!respuesta.ok) {
@@ -141,6 +155,8 @@ const extraerTipos = async () => {
 
 // ======= Funcion de inicio ======= //
 const init = async () => {
+    if (!pokeTargets) return;
+
     await extraerTipos();
     todosLosPokemones = await listaPokemones(limitePokemon) || [];
     pokemonesFiltrados = [...todosLosPokemones];
