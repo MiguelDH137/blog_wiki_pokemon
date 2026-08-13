@@ -298,9 +298,10 @@ body {
 
 .darkBody #section-hero {
     background-image: url(../assets/pokeArchives_hero_night.jpeg);
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    aspect-ratio: 2816 / 1536;
     height: auto;
     border-radius: 16px;
 }
@@ -357,6 +358,16 @@ body {
 @media(min-width: 350px) and (max-width: 500px){
     body {
         margin: 0% 5%;
+    }
+
+    /* ========== Seccion hero ========== */
+    #section-hero {
+        margin: 80px 0 40px;
+    }
+
+    .darkBody #section-hero {
+        background-size: contain;
+        background-position: center;
     }
 
     /* Seccion info */
