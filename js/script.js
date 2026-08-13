@@ -102,20 +102,17 @@ const imprimirPokedex = () => {
 // ====== Funcion para filtrar ====== //
 const aplicarFiltros = () => {
     const tipoSeleccionado = selectTipo.value;
-    const textoBusqueda = inputBusqueda.value;
-    
+    const textoBusqueda = inputBusqueda.value.trim().toLowerCase();
+
     pagina = 1;
-    
+
     pokemonesFiltrados = todosLosPokemones.filter(pokemon => {
         const coincideTipo = (tipoSeleccionado === 'Todos') || pokemon.types.includes(tipoSeleccionado);
-    
-        const coincideNombre = pokemon.name.includes(textoBusqueda);
-    
-        const coincideId = pokemon.id.toString().includes(textoBusqueda)
-        
-        const coincidebusqueda = coincideNombre || coincideId
-    
-        return coincideTipo && coincidebusqueda;
+        const coincideNombre = pokemon.name.toLowerCase().includes(textoBusqueda);
+        const coincideId = pokemon.id.toString().includes(textoBusqueda);
+        const coincideBusqueda = coincideNombre || coincideId;
+
+        return coincideTipo && coincideBusqueda;
     });
     imprimirPokedex();
 }
@@ -127,19 +124,24 @@ inputBusqueda.addEventListener('input', aplicarFiltros);
 // ======= Funcion para extraer tipos del endpoint ======= //
 const extraerTipos = async () => {
     const respuesta = await fetch(`https://pokeapi.co/api/v2/type`);
-    let respuestaStatus = (respuesta.ok)
-    ? datosRecibidos.results.forEach(tipo => {
-            const option = document.createElement('option');
-            option.value = tipo.name;
-            option.textContent = tipo.name;
-            selectTipo.appendChild(option);
-        })
-    : console.error(`Error al cargar la lista de tipos`);
+
+    if (!respuesta.ok) {
+        console.error(`Error al cargar la lista de tipos: ${respuesta.status}`);
+        return;
+    }
+
+    const datosRecibidos = await respuesta.json();
+    datosRecibidos.results.forEach(tipo => {
+        const option = document.createElement('option');
+        option.value = tipo.name;
+        option.textContent = tipo.name;
+        selectTipo.appendChild(option);
+    });
 }
 
 // ======= Funcion de inicio ======= //
 const init = async () => {
-    extraerTipos();
+    await extraerTipos();
     todosLosPokemones = await listaPokemones(limitePokemon) || [];
     pokemonesFiltrados = [...todosLosPokemones];
     imprimirPokedex();
